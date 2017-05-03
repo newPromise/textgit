@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    /*
+    * splice();用于删除数组，这个方法接收两个参数，第一个参数是要删除数组项的
+    * 位置，第二个参数是自从要删除的项开始，向后删除项的项目个数
+    *数组去重要注意删除数组后项目序号的变化
+    *
+    *
+    *
+    *
+    * */
+    window.onload=function(){
+     var number=[2,3,4,2,2,2,1,5,7,3,4,5,2,3,3,3,4,7,5,3];
+     for(var i=0;i<number.length;i++){
+         for(var j=i+1;j<number.length;j++){
+             if(number[i]==number[j]){
+                 //数组去重中的splice方法
+                number.splice(j,1);//因为删除这一项后，原来的索引为4变为了索引为3，j要减去1，
+                 //重新从3开始，如果后面没有匹配的，则减掉1
+                j--;
+             }
+         }
+     }
+     for(var i=0;i<number.length;i++){
+         document.write(number[i]);
+     }
+    /*
+    *
+     var someone = {
+     name: "Bob",
+     showName: function(){
+     alert(this.name);
+     }
+
+     };
+
+     var other = {
+     name: "Tom",
+     showName: someone.showName
+     }
+
+     other.showName();
+     */
+    function outer(){
+        inner();
+    }
+    function inner(){
+        alert(inner.caller);
+    }
+    outer();
+
+
+
+
+
+    }
+</script>
+
+</body>
+</html>
