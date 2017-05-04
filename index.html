@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header.css">
+    <style>
+        .add{
+            width: 500px;
+            height: 300px;
+            margin: 0 auto;
+            margin-top: 40px;
+            background-color: lightgrey;
+            display: flex;
+
+        }
+        .addLink{
+            margin: auto;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            width: 200px;
+            height: 50px;
+            text-decoration: none;
+            line-height: 50px;
+            background-color: #EE7419;
+            color: white;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="content  cirle-shadow">
+    <div id="header">
+        <div class="head">
+            <span>问卷管理</span>
+            <span><a href="survey list.html" >我的问卷</a></span>
+        </div>
+    </div>
+    <div id="main">
+      <div class="addWrap">
+         <div class="add cirle-shadow">
+              <a class="addLink" href="add.html"><span>+ 新建问卷</span></a>
+         </div>
+      </div>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript">
+    window.onload=function(){
+        var add=document.getElementsByClassName("addLink")[0];
+        add.onclick=function(){
+            sessionStorage.setItem("editJuge",false);
+        }
+    }
+
+</script>
+</html>

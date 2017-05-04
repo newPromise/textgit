@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.cirle-shadow{
+    border-radius: 5px;
+    box-shadow: grey;
+}
+.content{
+    width: 80%;
+
+    margin: 0 auto;
+
+
+}
+#header{
+    width: 100%;
+    background-color: #EE7419;
+}
+.head{
+    overflow: hidden;
+    zoom: 1;
+}
+.head span{
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    margin-left: 100px;
+    color: white;
+    float: left;
+}
+.head  span:first-child{
+    font-size: 20px;
+}
+.head span a{
+    color: white;
+    text-decoration: none;
+}
+.add{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: whitesmoke;
+    display: flex;
+
+}
+#addBtn{
+    margin: auto;
+    border: 0;
+    background-color: #EE7419;
+    height: 50px;
+    width: 200px;
+    color: white;
+    font-size: 20px;
+}

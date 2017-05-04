@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="header.css">
+    <style>
+        .content{
+            position: relative;
+        }
+        #submit{
+            font-size: 20px;
+            background-color: blue;
+            color: white;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+            border: 0;
+            margin: auto;
+        }
+        .footer{
+            position: absolute;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            bottom: 0;
+        }
+        .footer a{
+            display: inline-block;
+            margin: auto;
+        }
+        .title{
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .main{
+            margin: 0 100px;
+        }
+        form  span{
+            display: inline-block;
+            width: 100px;
+            height: 50px;
+            margin: 20px;
+        }
+        form input{
+            margin-left: 25px;
+        }
+    </style>
+</head>
+<body>
+<div class="content radius">
+    <div id="header">
+        <div class="head">
+            <span>问卷管理</span>
+            <span><a href="survey list.html" >我的问卷</a></span>
+        </div>
+    </div>
+    <p class="title"></p>
+    <div class="main">
+            <!--都不变，直接将innerHTML获取到dom,然后改变type,后面的说明是之前的value值-->
+            <!--创建一个form标签，还是创建多个form标签呢？？-->
+    </div>
+    <div class="footer">
+        <a href="survey%20list.html"><input type="submit" value="提交" id="submit"></a>
+    </div>
+</div>
+
+
+
+</body>
+<script type="text/javascript" src="listPage.js"></script>
+</html>

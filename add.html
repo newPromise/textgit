@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跳转</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="日历组件.css">
+    <link  rel="stylesheet" href="header.css">
+
+    <style>
+       .writeWrap{
+
+           width: 800px;
+           margin: 0 auto;
+           margin-top: 50px;
+           padding: 30px;
+           background-color: white;
+
+       }
+        .title{
+            width: 100%;
+            height: 50px;
+            border: 0;
+            text-align: center;
+            color: black;
+            font-size: 20px;
+            border-collapse: collapse;
+            margin: 10px auto;
+        }
+        .line{
+            display: inline-block;
+            width: 100%;
+            border: 1px solid gray;
+
+        }
+        .addQue{
+            padding: 20px;
+        }
+        .addQue input{
+            width: 100%;
+            height: 50px;
+            border: 0;
+            background-color: #EEEEEE;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 20px;
+            color: darkgrey;
+            margin: 20px auto;
+        }
+        .choice:hover{
+
+
+        }
+        .Item{
+            min-height: 40px;/*注意这儿*/
+        }
+        .choice{
+           position: relative;
+        }
+        .choice ul {
+            text-align: right;
+        }
+        .choice ul li {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        .queArea input{
+            display: block;
+            min-width: 200px;
+            height: 30px;
+            margin-left: 50px;
+            margin-bottom: 30px;
+            margin-top: -20px;
+        }
+
+
+        .choiceEdit{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+        }
+        .choiceEdit li{
+            margin-left: 10px;
+            list-style-type: none;
+            display: inline-block;
+
+        }
+        #textbox{
+            width: 600px;
+            height: 200px;
+            border: 1px solid black;
+            margin-left: 50px;
+        }
+
+
+
+        .queStyle{
+            margin: 0 auto;
+            text-align: center;
+            display: none;
+        }
+        .queStyle a{
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid black;
+            margin: 20px 20px;
+        }
+        .footer{
+            padding: 10px 50px;
+            margin: 10px auto;
+            zoom: 1;
+            overflow: hidden;
+        }
+        .footer .dateEnd{
+            float: left;
+            display: inline-block;
+
+        }
+        .footer .date{
+            border: 1px solid grey;
+
+        }
+        .footer input{
+            float: right;
+            margin-left: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: 1px solid black;
+            color: black;
+            width: 100px;
+
+        }
+
+        #shield{
+            position: absolute;
+            top:0;
+
+            opacity: 0.5;
+            background-color: black;
+        }
+        .ensurebox{
+            opacity: 1;
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            width: 400px;
+            height: 200px;
+            background-color: #FFFFFF;
+        }
+        #tipbar{
+            opacity: 1;
+            height: 50px;
+            background-color: #F7F7F7;
+            padding-left: 10px;
+            padding-right: 10px;
+
+        }
+        #tipbar span:first-child{
+            float: left;
+            line-height: 50px;
+            font-size: 20px;
+        }
+
+        #tipbar span:last-child{
+            display: inline-block;
+            float: right;
+            line-height: 50px;
+            font-size: 40px;
+            transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            cursor: pointer;
+        }
+        .tipcontent p{
+            margin: 20px;
+        }
+        .tipcontent  p:last-child{
+            text-align: center;
+        }
+        .tipcontent a{
+            display: inline-block;
+            width: 60px;
+            height: 25px;
+            line-height: 25px;
+            margin: 10px;
+            border: 1px solid black;
+        }
+        .tipcontent p:last-child  a:first-child{
+            background-color: #F07600;
+            color: white;
+        }
+        #calender{
+            display:none;
+            width: 22%;
+            height: 250px;
+            position: absolute;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="content radius">
+    <div id="header">
+        <div class="head">
+            <span>问卷管理</span>
+            <span><a href="survey list.html" >我的问卷</a></span>
+        </div>
+    </div>
+    <div class="main ">
+        <div id="writeWrap radius" class="writeWrap">
+            <div id="write" class="write">
+                <input type="text" class="title"  value="标题">
+                <div class="queArea">
+                </div>
+                <span class="line"></span>
+                <div class="queStyle">
+                        <a id="radio">单选</a>
+                        <a id="checkbox">多选</a>
+                        <a id="text">文本题</a>
+                </div>
+                <div id="addQue" class="addQue radius"><!--选择是选单选还是多选-->
+                        <input type="button" class="addBtn  radius"   value="+ 添加问题">
+                </div>
+                <span class="line"></span>
+                <div class="footer">
+                    <div class="dateEnd">
+                        <span>问卷截止日期</span>
+                        <input type="text" id="datetip">
+                        <div class="calendar">
+
+                        </div>
+                    </div>
+                    <a href="survey%20list.html"><input type="button" class="save" id="save" value="保存"></a>
+                    <input type="button" class="publish" id="publish" value="点击发布">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--这里遮罩效果和浮出层分开，以实现浮出遮罩效果-->
+<div id="shield">
+</div>
+        <div class="ensurebox  radius">
+            <div id="tipbar">
+                <span>提示</span>
+                <span id="hide">+</span>
+            </div>
+            <div class="tipcontent">
+                <p>
+                    <span>是否发布问卷?</span>
+                    <span></span>
+                </p>
+                <p>
+                    <a id="ensure" href="survey%20list.html">确定</a>
+                    <a id="cancel">取消</a>
+                </p>
+            </div>
+        </div>
+
+
+<script type="text/javascript" src="calender.js"></script>
+<script type="text/javascript" src="add.js"></script>
+</body>
+</html>

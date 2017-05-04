@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link  rel="stylesheet" href="header.css">
+    <link  rel="stylesheet" href="main.css">
+    <style>
+        table{
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th ,td{
+            width: 200px;
+            text-align: left;
+            height: 50px;
+
+        }
+        th a {
+            text-align: center;
+            display: inline-block;
+            line-height: 30px;
+            width: 100px;
+            height: 30px;
+            background-color: #F07600;
+            color: white;
+            cursor: pointer;
+        }
+        .cancelButton{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 20px;
+
+        }
+        .content{
+            position: relative;
+        }
+
+        .cancelButton a{
+            margin: 0 auto;
+            display: block;
+            line-height: 40px;
+            width: 80px;
+            height: 40px;
+            background-color: blue;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content radius">
+    <div id="header">
+        <div class="head">
+            <span>问卷管理</span>
+            <span><a href="survey list.html" >我的问卷</a></span>
+        </div>
+    </div>
+    <div class="main" id="main">
+        <table>
+            <thead>
+            <tr>
+                <th>标题</th>
+                <th>时间</th>
+                <th>状态</th>
+                <th>操作</th>
+                <th ><a id="newNire"  href="add.html">+ 新建问卷</a></th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--至于要建几行的数据要使用存储的数据-->
+
+            </tbody>
+        </table>
+    </div>
+    <div class="cancelButton">
+        <a>删除问卷</a>
+    </div>
+</div>
+
+</body>
+<script type="text/javascript" src="survey%20list.js"></script>
+
+</html>
